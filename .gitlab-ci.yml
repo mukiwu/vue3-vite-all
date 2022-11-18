@@ -1,0 +1,14 @@
+stages:
+- release
+
+release:
+  stage: release
+  image: node:lts
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH  # 當預設的分支(通常是 main / master)有 push 或 merge 時才會執行該工作
+  script:
+    - npm install semantic-release @semantic-release/gitlab @semantic-release/changelog @semantic-release/git
+    - export GL_TOKEN=${GL_TOKEN}
+    - GL_TOKEN=${GL_TOKEN} npx semantic-release
+  tags:
+    - docker
