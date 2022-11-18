@@ -16,7 +16,7 @@ module.exports = {
   },
   rules: {
     'vue/multi-word-component-names': ['error', {
-      ignores: ['Login', 'Layout', 'Home', 'Index']
+      ignores: ['Login', 'Layout', 'Home', 'Setting']
     }]
     // 'semi': [2, 'never']
   }

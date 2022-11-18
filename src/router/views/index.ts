@@ -20,5 +20,19 @@ export default [
         component: () => import('@/views/Home.vue')
       }
     ]
+  },
+  {
+    path: '/setting',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Setting',
+        meta: {
+          title: '設定'
+        },
+        component: () => import('@/views/Setting.vue')
+      }
+    ]
   }
 ] as AddRouteRecordRaw[]
